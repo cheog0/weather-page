@@ -8,9 +8,9 @@ const WeatherBox = ({ weather }) => {
 
   return (
     <div className="weather-box">
-      <div>{weather.name}</div>
-      <h2>{weather.main.temp}도</h2>
-      <h3>{weather.weather[0].description}</h3>
+      <div className="weather-city">{weather.name}</div>
+      <h2 className="weather-temp">{weather.main.temp}도</h2>
+      <h3 className="weather-desc">{weather.weather[0].description}</h3>
     </div>
   );
 };

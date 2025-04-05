@@ -1,14 +1,34 @@
+/* WeatherButton.css */
+
 .weather-button {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* PC 화면에서 가로 정렬 */
+@media (min-width: 768px) {
+  .weather-button {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .weather-btn {
-  width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
+  width: 180px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: #007bff;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.weather-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

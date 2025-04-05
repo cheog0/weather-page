@@ -1,27 +1,28 @@
+/* App.css */
+
 body {
-  background: url(https://images.unsplash.com/photo-1592210454359-9043f067919b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D)
+  background: url("https://images.unsplash.com/photo-1592210454359-9043f067919b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D")
     no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
   height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 수직 가운데 정렬 */
-  align-items: center; /* 수평 가운데 정렬 */
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   padding: 20px;
 }
 
-.app-wrapper {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 20px;
+.weather-content {
+  width: 100%;
+  max-width: 500px;
 }
 
 .loader-wrapper {
@@ -29,9 +30,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.weather-content {
-  width: 100%;
-  max-width: 500px;
 }
