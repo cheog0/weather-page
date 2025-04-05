@@ -10,6 +10,7 @@ function App() {
   const [city, setCity] = useState("");
   const [loading, setLoading] = useState(false);
   const cities = ["paris", "new york", "tokyo", "seoul"];
+  const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -20,7 +21,7 @@ function App() {
   };
 
   const getWeatherByCurrentLocation = async (lat, lon) => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f236e94953310d8437ba15866038dba3&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPENWEATHER_API_KEY}&units=metric`;
     setLoading(true);
     let response = await fetch(url);
     let data = await response.json();
@@ -30,7 +31,7 @@ function App() {
 
   const getWeatherByCity = async () => {
     setLoading(true);
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f236e94953310d8437ba15866038dba3&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPENWEATHER_API_KEY}&units=metric`;
     let response = await fetch(url);
     let data = await response.json();
     setWeather(data);
@@ -46,19 +47,22 @@ function App() {
   }, [city]);
 
   return (
-    <div>
+    <div className="container text-center">
       {loading ? (
-        <div className="container">
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ height: "100vh" }}
+        >
           <ClipLoader
             color="#000000"
             loading={loading}
-            size={150}
+            size={100}
             aria-label="Loading Spinner"
             data-testid="loader"
           />
         </div>
       ) : (
-        <div className="container">
+        <div>
           <WeatherBox weather={weather} />
           <WeatherButton cities={cities} setCity={setCity} />
         </div>

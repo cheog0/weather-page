@@ -4,7 +4,7 @@ import "./WeatherButton.css";
 
 const WeatherButton = ({ cities, setCity }) => {
   return (
-    <div className="weather-button">
+    <div className="weather-button mt-3">
       <Button
         className="weather-btn"
         variant="primary"
@@ -16,8 +16,8 @@ const WeatherButton = ({ cities, setCity }) => {
         <Button
           className="weather-btn"
           key={index}
-          onClick={() => setCity(item)}
           variant="primary"
+          onClick={() => setCity(item)}
         >
           {item}
         </Button>
