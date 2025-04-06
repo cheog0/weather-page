@@ -1,11 +1,25 @@
 import React from "react";
 import "./WeatherBox.css";
+import { ClipLoader } from "react-spinners";
 
 const WeatherBox = ({ weather }) => {
   console.log(weather);
 
   if (!weather || !weather.main) {
-    return <p>Loading weather data...</p>;
+    return (
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "300px" }}
+      >
+        <ClipLoader
+          color="#000000"
+          loading={true}
+          size={200}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </div>
+    );
   }
 
   // 섭씨 → 화씨 변환 함수
