@@ -17,6 +17,13 @@
   }
 }
 
+.weather-btn.active {
+  background-color: white;
+  color: #007bff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .weather-btn {
   width: 180px;
   padding: 12px 16px;
